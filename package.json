@@ -1,6 +1,6 @@
 {
   "name": "@ciscode/ui-notification-kit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A React component library for building notification systems.",
   "license": "MIT",
   "author": "CISCODE",
