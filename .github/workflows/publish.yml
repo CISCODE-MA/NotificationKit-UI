@@ -1,9 +1,9 @@
 name: Publish to NPM
 
 on:
-  # push:
-  #   branches:
-  #     - master
+  push:
+    tags:
+      - 'v*.*.*'
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Check if tag is from master
+        id: check_tag
+        run: |
+          BRANCH=$(git branch -r --contains ${{ github.sha }} | grep 'origin/master' || true)
+          if [ -z "$BRANCH" ]; then
+            echo "Tag was not created from master. Skipping publish."
+            exit 1
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
