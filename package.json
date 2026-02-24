@@ -1,8 +1,13 @@
 {
-  "name": "@ciscode/reactts-developerkit",
+  "name": "@ciscode/ui-notification-kit",
   "version": "0.0.0",
-  "description": "React TypeScript hybrid library template (components + hooks + utils).",
+  "description": "A React component library for building notification systems.",
   "license": "MIT",
+  "author": "CISCODE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CISCODE-MA/NotificationKit-UI.git"
+  },
   "private": false,
   "type": "module",
   "sideEffects": false,
