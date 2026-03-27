@@ -26,7 +26,6 @@ jobs:
 
     permissions:
       contents: read
-
     # Config stays in the workflow file (token stays in repo secrets)
     env:
       SONAR_HOST_URL: 'https://sonarcloud.io'
