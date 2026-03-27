@@ -60,17 +60,20 @@
     "build": "tsup && npm run build:css",
     "build:css": "tailwindcss -i ./src/assets/styles/style.css -o ./dist/style.css --minify",
     "dev": "tsup --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
     "format": "prettier . --check",
     "format:write": "prettier . --write",
+    "verify": "npm run lint && npm run typecheck && npm run test:cov",
+    "prepublishOnly": "npm run verify && npm run build",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish",
-    "prepare": "husky",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,cjs,json,md,yml,yaml}": [
