@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import type { NotificationRecord } from '../models/index.js';
 import { NotificationContainerGroup } from './NotificationContainer.js';
 
@@ -11,5 +12,12 @@ export function NotificationViewport({
 }) {
   const ordered = useMemo(() => [...items].sort((a, b) => a.createdAt - b.createdAt), [items]);
 
-  return <NotificationContainerGroup items={ordered} onDismiss={onDismiss} />;
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  return createPortal(
+    <NotificationContainerGroup items={ordered} onDismiss={onDismiss} />,
+    document.body,
+  );
 }

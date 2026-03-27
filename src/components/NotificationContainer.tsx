@@ -25,6 +25,7 @@ export function NotificationContainer({ position, items, onDismiss }: Notificati
   return (
     <div
       className={`pointer-events-none fixed z-70 flex w-full max-w-xs flex-col gap-3 px-4 sm:max-w-sm ${positionClassMap[position]}`}
+      style={{ zIndex: 2147483647 }}
       role="region"
       aria-label="Notifications"
       aria-live="polite"

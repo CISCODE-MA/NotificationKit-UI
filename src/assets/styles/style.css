@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base layer for NotificationKit-UI */
-:root {
-  color-scheme: light dark;
-}
-
 /* Accessibility: Screen reader only class */
 @layer utilities {
   .sr-only {
