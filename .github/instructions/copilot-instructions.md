@@ -97,25 +97,25 @@ Toast/
 
 ### JSDoc for Hooks:
 
-```typescript
+````typescript
 /**
  * Hook for managing notification state
  * @returns Notification methods and state
  * @example
  * ```tsx
  * const { notify, dismiss, notifications } = useNotifications();
- * 
+ *
  * const showSuccess = () => {
  *   notify({ type: 'success', message: 'Action completed!' });
  * };
  * ```
  */
 export function useNotifications(): UseNotificationsReturn;
-```
+````
 
 ### Component Documentation:
 
-```typescript
+````typescript
 export interface ToastProps {
   /** Toast message content */
   message: string;
@@ -129,7 +129,7 @@ export interface ToastProps {
 
 /**
  * Toast notification component
- * 
+ *
  * @example
  * ```tsx
  * <Toast
@@ -140,7 +140,7 @@ export interface ToastProps {
  * ```
  */
 export function Toast(props: ToastProps): JSX.Element;
-```
+````
 
 ---
 
@@ -179,6 +179,7 @@ export type NotificationType = 'success' | 'error' | 'warning' | 'info';
 ### Creating New Components:
 
 1. **Create component folder**
+
    ```
    mkdir -p src/components/MyComponent
    cd src/components/MyComponent
@@ -230,7 +231,7 @@ useEffect(() => {
 // ✅ Limit queue size
 const MAX_NOTIFICATIONS = 5;
 const addNotification = (notif) => {
-  setNotifications(prev => [...prev.slice(-MAX_NOTIFICATIONS + 1), notif]);
+  setNotifications((prev) => [...prev.slice(-MAX_NOTIFICATIONS + 1), notif]);
 };
 ```
 
